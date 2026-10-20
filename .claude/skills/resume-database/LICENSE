@@ -1,0 +1,57 @@
+# 版权声明 / Copyright Notice
+
+Copyright © 2026 Liunian06 (https://github.com/Liunian06). All Rights Reserved.
+
+## 中文
+
+本软件及其所有相关文档文件（以下简称"软件"）为付费产品。源代码以明文形式提供，但**公开不代表开源**。
+
+**版权所有者保留所有权利。**
+
+未经版权所有者明确书面许可，任何人不得：
+- 复制、修改、合并、发布、分发、再许可或销售本软件的副本
+- 将本软件或其任何部分用于商业目的
+- 基于本软件创建衍生作品
+
+本软件按"原样"提供，不提供任何明示或暗示的保证，包括但不限于对适销性、特定用途适用性和非侵权性的保证。在任何情况下，版权所有者均不对因使用本软件而产生的任何索赔、损害或其他责任负责。
+
+---
+
+## English
+
+This software and associated documentation files (the "Software") is a paid product. The source code is provided in plain text, but **public access does not mean open source**.
+
+**All rights reserved by the copyright holder.**
+
+Without explicit written permission from the copyright holder, no person may:
+- Copy, modify, merge, publish, distribute, sublicense, or sell copies of the Software
+- Use the Software or any part thereof for commercial purposes
+- Create derivative works based on the Software
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE.
+
+---
+
+## MiSans 字体许可 / MiSans Font License
+
+本软件包含的 MiSans 字体文件（位于 `assets/fonts/` 目录）由小米科技有限责任公司发布，遵循小米 MiSans 字体知识产权许可协议：
+
+- MiSans Global 字体可在全球范围内免费商用
+- 可在任何平台、任何商业项目中使用
+- 作为嵌入式字体使用时，应在软件中特别注明使用了 MiSans 字体
+- 可自由调节字体的粗细、间距等参数
+- **不得单独将 MiSans 字体或其组件进行外观上的更改**
+
+MiSans 字体的版权归小米科技有限责任公司所有。更多信息请访问：https://hyperos.mi.com/font/
+
+---
+
+The MiSans font files included in this software (located in the `assets/fonts/` directory) are released by Xiaomi Technology Co., Ltd. and are subject to the Xiaomi MiSans Font Intellectual Property License Agreement:
+
+- MiSans Global fonts are free for commercial use worldwide
+- May be used on any platform and in any commercial project
+- When used as an embedded font, you should specifically indicate in the software that the MiSans font is used
+- You may freely adjust font parameters such as weight and spacing
+- **You may not separately modify the appearance of the MiSans font or its components**
+
+Copyright of MiSans fonts belongs to Xiaomi Technology Co., Ltd. For more information, visit: https://hyperos.mi.com/font/
