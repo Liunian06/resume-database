@@ -1,8 +1,12 @@
+<div align="center">
+
 # Resume Database Skill
 
 面向大学生海投场景的简历与面试准备工具。为每个岗位生成定向简历和面试材料，并记录投递进度。
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
+
+</div>
 
 > 本项目源码公开，采用 CC BY-NC-SA 4.0 协议授权：可免费用于个人求职、学习和研究，禁止商用。详见[许可协议](#许可协议)。
 
