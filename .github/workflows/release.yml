@@ -14,7 +14,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: 读取 skill 版本号
         id: ver
@@ -45,7 +47,23 @@ jobs:
           V="${{ steps.ver.outputs.version }}"
           ZIP="resume-database-v${V}.zip"
           (cd .claude/skills && zip -r "$GITHUB_WORKSPACE/$ZIP" resume-database)
-          gh release create "v${V}" "$ZIP" \
-            --target "$GITHUB_SHA" \
-            --title "v${V}" \
-            --generate-notes
+
+          # 上一个 tag（首次发版时为空），更新内容取自两者之间动过 skill 目录的提交
+          PREV=$(git describe --tags --abbrev=0 2>/dev/null || true)
+          {
+            echo "## 更新内容"
+            echo
+            git log ${PREV:+$PREV..HEAD} --no-merges --pretty='- %s (`%h`)' -- .claude/skills/resume-database
+            echo
+            echo "## 安装"
+            echo
+            echo '推荐用 `npx skills add Liunian06/resume-database --skill resume-database -g` 安装，详见 [README](https://github.com/${{ github.repository }}#快速开始)。'
+            echo
+            echo "也可以下载下方的 \`$ZIP\`，解压后把 \`resume-database/\` 目录放进你的 AI 编程助手的 skills 目录（如 \`~/.claude/skills/\`）。"
+            if [ -n "$PREV" ]; then
+              echo
+              echo "**完整对比**：https://github.com/${{ github.repository }}/compare/${PREV}...v${V}"
+            fi
+          } > notes.md
+
+          gh release create "v${V}" "$ZIP"             --target "$GITHUB_SHA"             --title "v${V}"             --notes-file notes.md
