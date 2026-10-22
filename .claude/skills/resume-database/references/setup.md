@@ -1,6 +1,10 @@
 # 环境初始化
 
-首次在一个仓库里使用本skill，或换了电脑，按下面顺序执行。所有命令在**仓库根目录**（`.claude`所在目录）运行，不要在skill目录里运行，因为脚本里的`data/`是相对路径。
+首次使用本skill，或换了电脑，按下面顺序执行。
+
+**路径约定：**
+- 文中的 `~/<agent>/skills/` 指skill的实际安装目录，`<agent>`是占位符，以安装命令的输出为准。例如Claude Code是 `~/.claude/skills/`。执行命令前先把占位符换成真实路径。
+- 所有命令在**工作目录**（用户准备存放简历数据的目录）运行，不要在skill目录里运行，因为脚本里的`data/`是相对路径，会生成在当前目录下。
 
 ## 1. 检查Python版本
 
@@ -13,7 +17,7 @@ python --version
 
 ## 2. 建立虚拟环境
 
-虚拟环境放在仓库根目录的 `.venv`，只服务于本仓库，不动用户的全局 Python。
+虚拟环境放在工作目录的 `.venv`，只服务于当前工作目录，不动用户的全局 Python。
 
 ```bash
 python -m venv .venv
@@ -34,7 +38,7 @@ source .venv/bin/activate
 
 - `.venv`已存在则跳过创建，直接激活
 - PowerShell 提示"禁止运行脚本"时，不要改用户的执行策略，改用 Git Bash，或不激活、直接调用 `.venv\Scripts\python.exe`
-- 仓库有 `.gitignore` 时，确认其中包含 `.venv/`，没有就提示用户加上
+- 工作目录是git仓库且有 `.gitignore` 时，确认其中包含 `.venv/`，没有就提示用户加上
 
 ## 3. 安装依赖
 
@@ -65,7 +69,7 @@ python -c "import docx, openpyxl; print('依赖正常')"
 检查字体文件是否齐全：
 
 ```bash
-ls .claude/skills/resume-database/assets/fonts
+ls ~/<agent>/skills/resume-database/assets/fonts
 ```
 
 应有 `MiSans-Regular.otf`、`MiSans-Bold.otf` 等。如果用户的电脑没装：
@@ -74,7 +78,7 @@ ls .claude/skills/resume-database/assets/fonts
 
 ## 5. 初始化data目录
 
-`data/` 与 skill 目录平级，在仓库根目录下。目录结构以 [SKILL.md](../SKILL.md) 的"Data目录结构"为准。初始化只创建必需的部分，其余按需创建（见[directory-structure.md](directory-structure.md)）：
+`data/` 在工作目录下，不放进skill安装目录。目录结构以 [SKILL.md](../SKILL.md) 的"Data目录结构"为准。初始化只创建必需的部分，其余按需创建（见[directory-structure.md](directory-structure.md)）：
 
 1. 创建 `data/` 目录
 2. 如果 `data/user_index.md` 不存在，从 [assets/templates/user_index.md](../assets/templates/user_index.md) 复制
@@ -83,7 +87,7 @@ ls .claude/skills/resume-database/assets/fonts
 
 ```bash
 mkdir -p data
-cp .claude/skills/resume-database/assets/templates/user_index.md data/user_index.md
+cp ~/<agent>/skills/resume-database/assets/templates/user_index.md data/user_index.md
 ```
 
 - `data/` 已存在时不覆盖任何已有文件，只补缺的部分
@@ -96,7 +100,7 @@ cp .claude/skills/resume-database/assets/templates/user_index.md data/user_index
 ```bash
 python - <<'EOF'
 import tempfile, pathlib, re, subprocess, sys
-root = pathlib.Path(".claude/skills/resume-database")
+root = pathlib.Path("~/<agent>/skills/resume-database").expanduser()
 text = (root / "assets/templates/resume_output_template.md").read_text(encoding="utf-8")
 text = text.replace("[11位手机号，纯数字，不加-或空格]", "13800000000")
 text = re.sub(r"^- 证件照：.*\n", "", text, flags=re.M)   # 模板里的证件照是占位说明，验证时去掉
@@ -114,13 +118,13 @@ EOF
 ## 7. 之后的日常使用
 
 - 每次新开终端先激活虚拟环境
-- 生成简历：`python .claude/skills/resume-database/scripts/generate_resume.py --input <简历.md>`，详见[docx-generation.md](docx-generation.md)
-- 投递记录：`python .claude/skills/resume-database/scripts/tracker.py ...`，详见[tracker-usage.md](tracker-usage.md)
+- 生成简历：`python ~/<agent>/skills/resume-database/scripts/generate_resume.py --input <简历.md>`，详见[docx-generation.md](docx-generation.md)
+- 投递记录：`python ~/<agent>/skills/resume-database/scripts/tracker.py ...`，详见[tracker-usage.md](tracker-usage.md)
 
 ## 初始化检查清单
 
 - [ ] Python ≥ 3.9
-- [ ] 仓库根目录有 `.venv`，已激活
+- [ ] 工作目录有 `.venv`，已激活
 - [ ] `python-docx`、`openpyxl` 已安装且能导入
 - [ ] MiSans 字体文件齐全，用户电脑已安装
 - [ ] `data/` 和 `data/user_index.md` 已创建

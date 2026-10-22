@@ -29,24 +29,24 @@
 请帮我安装 resume-database 这个 skill，仓库地址：https://github.com/Liunian06/resume-database
 
 1. 检查 Node.js 版本是否 >= 22.20，Python 版本是否 >= 3.9。任何一项不满足，先告诉我，不要自行安装。
-2. 在当前项目目录执行：npx skills add Liunian06/resume-database --skill resume-database -a claude-code
-3. 安装完成后，阅读 .claude/skills/resume-database/references/setup.md，按其中的步骤初始化环境：建立 .venv、安装 python-docx 和 openpyxl、检查 MiSans 字体文件、创建 data/ 目录。
-4. 全部完成后，告诉我安装结果，然后阅读 .claude/skills/resume-database/references/introduction.md，向我介绍这个 skill 的功能和使用流程，并问我想先做什么。
+2. 全局安装：npx skills add Liunian06/resume-database --skill resume-database -g。如果命令让我选择 agent，请选择你自己（我当前使用的这个 agent）。
+3. 安装完成后，从命令输出中确认 skill 的实际安装目录，阅读其中的 references/setup.md，按步骤初始化环境：在我当前的工作目录建立 .venv、安装 python-docx 和 openpyxl、检查 MiSans 字体文件、创建 data/ 目录。
+4. 全部完成后，告诉我安装结果，然后阅读安装目录下的 references/introduction.md，向我介绍这个 skill 的功能和使用流程，并问我想先做什么。
 
 注意：不要修改我的全局 Python 环境和系统执行策略。
 ```
 
 ### 方式二：手动安装
 
-需要 [Node.js](https://nodejs.org/) 22.20 及以上、[Claude Code](https://claude.com/claude-code) 和 Python 3.9 及以上。
+需要 [Node.js](https://nodejs.org/) 22.20 及以上、支持 Skills 的 AI 编程助手（如 [Claude Code](https://claude.com/claude-code)）和 Python 3.9 及以上。
 
-1. 在你的项目目录安装 skill：
+1. 全局安装 skill，按提示选择你使用的 AI 编程助手：
 
 ```bash
-npx skills add Liunian06/resume-database --skill resume-database -a claude-code
+npx skills add Liunian06/resume-database --skill resume-database -g
 ```
 
-2. 初始化环境。命令都在项目根目录运行，详见 [setup.md](.claude/skills/resume-database/references/setup.md)：
+2. 初始化环境。在你准备存放简历数据的工作目录运行，详见 [setup.md](.claude/skills/resume-database/references/setup.md)：
 
 ```bash
 python -m venv .venv
@@ -55,7 +55,7 @@ python -m pip install python-docx openpyxl
 
 ### 开始使用
 
-安装完成后，在 Claude Code 里直接说需求，例如：
+安装完成后，在你的 AI 编程助手里直接说需求，例如：
 
 - 我想投字节跳动的产品实习，帮我准备简历和面试材料
 - 我是 10001 号候选人，想投腾讯的数据分析岗
