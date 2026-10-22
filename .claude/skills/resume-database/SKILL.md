@@ -1,13 +1,13 @@
 ---
 name: resume-database
-version: 1.0.1
-updated: 2026-10-21
+version: 1.0.2
+updated: 2026-10-22
 description: 大学生简历快速生成与面试准备工具。管理候选人CV、岗位JD、企业背调、面经库和经历素材,生成通用简历(按亮眼程度排序)或针对特定公司岗位的定向简历和面试准备文档,支持经历包装（先做再写）和投递记录追踪。适用于需要快速生成简历、海投策略、为每个岗位定制简历的求职场景。触发条件：用户要求生成简历(通用或定向)、为特定岗位定制简历、管理多个候选人求职材料、生成岗位定向面试准备、记录投递进度、从零散材料整理结构化CV、参考他人经历包装实习/项目经历。不触发：简历投递/岗位爬取/ATS对接、在线服务/图形界面、修改教育经历真实性。主要生成DOCX,如需PDF可用其他工具转换。
 ---
 
 # Resume Database Skill
 
-> **版权声明：** 本skill为付费产品，源代码公开但保留所有权利。Copyright © 2026 [Liunian06](https://github.com/Liunian06). All Rights Reserved. 完整许可协议见 [LICENSE](LICENSE)。
+> **许可协议：** 本skill源码公开，采用 CC BY-NC-SA 4.0 协议授权（禁止商用，需署名，相同方式共享），MiSans 字体除外。Copyright © 2026 [Liunian06](https://github.com/Liunian06)。完整协议与补充说明见 [LICENSE](LICENSE)。
 
 ## 背景
 

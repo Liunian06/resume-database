@@ -1,0 +1,64 @@
+Resume Database Skill
+Copyright (c) 2026 Liunian06 (https://github.com/Liunian06)
+
+本项目采用 知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议 授权。
+This work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+
+完整协议 / Full legal code:
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+协议摘要 / Human-readable summary:
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+---
+
+## 补充说明 / Supplementary Notes
+
+以下内容说明版权所有者如何理解上述协议中的"非商业性使用（NonCommercial）"。
+The following notes describe how the licensor understands "NonCommercial" in the license above.
+
+### 视为商业用途的情形 / Treated as commercial use
+
+版权所有者认为，以下行为主要目的在于获取商业利益或金钱回报，属于商业用途：
+- 将本项目或其衍生物出售，或作为付费产品、付费课程、付费服务的一部分提供
+- 使用本项目或其衍生物为他人提供收费的简历制作、简历修改、面试辅导等服务
+- 将本项目或其衍生物作为赠品、福利、资料包，用于引流、涨粉、拉群、导流到其他产品或服务
+- 在以盈利为目的的平台、账号、社群中，将本项目作为获客手段
+
+### 允许的情形 / Permitted
+
+- 个人使用本项目整理自己的简历、准备自己的面试
+- 学习、研究、教学（不收费）
+- 非营利性的分享与交流，需遵守署名与相同方式共享要求
+
+### 署名要求 / Attribution
+
+转载、分发或基于本项目创作时，必须：
+- 保留版权声明与本 LICENSE
+- 标明原作者 Liunian06 与原仓库链接
+- 标明是否做过修改
+
+### 商业授权 / Commercial Licensing
+
+如需商业使用，请联系版权所有者获取单独授权。版权所有者自行提供的付费素材包、付费服务不受上述限制。
+For commercial use, contact the copyright holder for a separate license.
+
+---
+
+## 第三方字体 / Third-Party Font (MiSans)
+
+上述 CC BY-NC-SA 4.0 协议不适用于 `assets/fonts/` 目录下的 MiSans 字体文件。
+The CC BY-NC-SA 4.0 license above does NOT apply to the MiSans font files under `assets/fonts/`.
+
+MiSans 字体由小米科技有限责任公司发布，遵循小米 MiSans 字体知识产权许可协议：
+- MiSans Global 字体可在全球范围内免费商用
+- 可在任何平台、任何商业项目中使用
+- 作为嵌入式字体使用时，应在软件中特别注明使用了 MiSans 字体
+- 可自由调节字体的粗细、间距等参数
+- 不得单独将 MiSans 字体或其组件进行外观上的更改
+
+MiSans 字体的版权归小米科技有限责任公司所有。更多信息：https://hyperos.mi.com/font/
+
+The MiSans fonts are released by Xiaomi Technology Co., Ltd. under the Xiaomi MiSans Font
+Intellectual Property License Agreement. They may not be modified in appearance.
+See https://hyperos.mi.com/font/

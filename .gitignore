@@ -1,6 +1,9 @@
 # 白名单模式：默认忽略所有，只保留 resume-database skill
 /*
 !.gitignore
+!README.md
+!LICENSE
+!docs/
 !.claude/
 .claude/*
 !.claude/skills/
