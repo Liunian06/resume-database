@@ -3,6 +3,7 @@
 !.gitignore
 !README.md
 !LICENSE
+!CHANGELOG.md
 !docs/
 !.github/
 !.claude/

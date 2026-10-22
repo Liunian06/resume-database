@@ -48,12 +48,23 @@ jobs:
           ZIP="resume-database-v${V}.zip"
           (cd .claude/skills && zip -r "$GITHUB_WORKSPACE/$ZIP" resume-database)
 
-          # 上一个 tag（首次发版时为空），更新内容取自两者之间动过 skill 目录的提交
+          # 上一个 tag（首次发版时为空），仅用于生成对比链接
           PREV=$(git describe --tags --abbrev=0 2>/dev/null || true)
+
+          # 从 CHANGELOG.md 取出当前版本的段落
+          BODY=$(awk -v v="$V" '
+            /^## \[/ { if (found) exit; if (index($0, "## [" v "]") == 1) { found = 1; next } }
+            found { print }
+          ' CHANGELOG.md | sed '/./,$!d' | sed -e :a -e '/^[[:space:]]*$/{$d;N;ba' -e '}')
+          if [ -z "$BODY" ]; then
+            echo "CHANGELOG.md 中没有 [$V] 的更新记录，请先补充再发版" >&2
+            exit 1
+          fi
+
           {
             echo "## 更新内容"
             echo
-            git log ${PREV:+$PREV..HEAD} --no-merges --pretty='- %s (`%h`)' -- .claude/skills/resume-database
+            echo "$BODY"
             echo
             echo "## 安装"
             echo
