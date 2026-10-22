@@ -1,0 +1,51 @@
+name: Release Skill
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.claude/skills/resume-database/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 读取 skill 版本号
+        id: ver
+        run: |
+          V=$(grep -m1 '^version:' .claude/skills/resume-database/SKILL.md | awk '{print $2}' | tr -d '\r')
+          if [ -z "$V" ]; then
+            echo "未能从 SKILL.md 读取到 version" >&2
+            exit 1
+          fi
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+
+      - name: 判断 release 是否已存在
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.ver.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 打包并发布
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V="${{ steps.ver.outputs.version }}"
+          ZIP="resume-database-v${V}.zip"
+          (cd .claude/skills && zip -r "$GITHUB_WORKSPACE/$ZIP" resume-database)
+          gh release create "v${V}" "$ZIP" \
+            --target "$GITHUB_SHA" \
+            --title "v${V}" \
+            --generate-notes
