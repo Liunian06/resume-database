@@ -3,8 +3,9 @@
 # Resume Database Skill
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-5A4FCF.svg)](https://claude.com/claude-code)
 
-面向大学生海投场景的简历与面试准备工具。为每个岗位生成定向简历和面试材料，并记录投递进度。
+面向大学生的一站式简历管理工具，包含从海投场景的简历制作到企业背调与面试准备的全链路支持，帮助每个大学生更好的own自己的秋招。
 
 </div>
 
