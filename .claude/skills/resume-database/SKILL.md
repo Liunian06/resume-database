@@ -1,6 +1,6 @@
 ---
 name: resume-database
-version: 1.0.4
+version: 1.0.5
 updated: 2026-10-23
 description: 大学生简历快速生成与面试准备工具。管理候选人CV、岗位JD、企业背调、面经库和经历素材,生成通用简历(按亮眼程度排序)或针对特定公司岗位的定向简历和面试准备文档,支持经历包装（先做再写）和投递记录追踪。适用于需要快速生成简历、海投策略、为每个岗位定制简历的求职场景。触发条件：用户要求生成简历(通用或定向)、为特定岗位定制简历、管理多个候选人求职材料、生成岗位定向面试准备、记录投递进度、从零散材料整理结构化CV、参考他人经历包装实习/项目经历。不触发：简历投递/岗位爬取/ATS对接、在线服务/图形界面、修改教育经历真实性。主要生成DOCX,如需PDF可用其他工具转换。
 ---
@@ -84,21 +84,20 @@ data/                          # 数据目录（在工作目录下，不在skill
 │   ├── generic_resume_CN.docx # 通用简历DOCX（中文）
 │   ├── generic_resume_EN.md # 通用简历Markdown（英文）
 │   ├── generic_resume_EN.docx # 通用简历DOCX（英文）
+│   ├── application_tracker.xlsx # 投递记录表（由tracker.py创建）
 │   └── jobs/                # 岗位目录
 │       └── <company>-<role>/ # 单个岗位目录
 │           ├── jd.md        # 岗位JD
 │           ├── company_background.md  # 企业背调
 │           ├── job_profile.md        # 岗位画像
 │           ├── <user_ID>_<company>_<role>_resume.md    # 定制简历Markdown
+│           ├── <user_ID>_<company>_<role>_resume_notes.md  # 待确认或需补充的内容（按需）
 │           ├── <user_ID>_<company>_<role>_resume.docx  # 定制简历DOCX
 │           └── <user_ID>_<company>_<role>_interview_prep.md  # 面试准备
 ├── interview_library/        # 公共面经库
-│   └── companies/
-│       └── <company>/
-│           └── <role>.md    # 某公司某岗位面经
+│   └── <company>_<position>.md  # 某公司某岗位面经
 ├── experience_library/       # 公共经历素材库
 │   └── <experience-slug>.md # 可复用的经历案例
-└── tracker.xlsx             # 投递追踪表格
 ```
 
 ## Workflow

@@ -118,6 +118,7 @@ data/
 ├── 10001/                          # 你的候选人目录
 │   ├── cv_CN.md                    # 你的中文CV（事实库）
 │   ├── cv_EN.md                    # 你的英文CV
+│   ├── application_tracker.xlsx    # 你的投递记录表
 │   └── jobs/                       # 你投递的岗位
 │       ├── 字节跳动-产品经理/
 │       │   ├── jd.md              # JD原文
@@ -129,12 +130,9 @@ data/
 │       └── 阿里巴巴-数据分析/
 │           └── ...
 ├── interview_library/              # 公共面经库
-│   └── companies/
-│       └── 字节跳动/
-│           └── 产品经理.md
+│   └── bytedance_product.md
 ├── experience_library/             # 公共经历素材库
 │   └── user_growth_analysis.md
-└── tracker.xlsx                    # 全局投递追踪表
 ```
 
 ## 与传统简历工具的区别
@@ -192,7 +190,7 @@ data/
 
 ### 场景5：查看投递进度
 **你的情况：** 想看自己投了哪些公司，进度如何  
-**操作：** 打开data/tracker.xlsx，查看Timeline列
+**操作：** 打开data/10001/application_tracker.xlsx（10001换成你的user_ID），查看进度列
 
 ## 开始使用
 

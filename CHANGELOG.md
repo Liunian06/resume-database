@@ -2,6 +2,12 @@
 
 本文件记录 resume-database skill 的版本变更。版本号与 `SKILL.md` 中的 `version` 保持一致，GitHub Release 的更新说明从这里读取。
 
+## [1.0.5] - 2026-10-23
+
+### 修复
+- 修正 `SKILL.md` 与 `introduction.md` 中 data 目录结构与实际不符的地方：投递记录表为 `data/<user_ID>/application_tracker.xlsx`（原写作 `data/tracker.xlsx`）；公共面经库为 `data/interview_library/<company>_<position>.md`（原多了一层 `companies/`）
+- `SKILL.md` 目录树补充 `<basename>_notes.md`
+
 ## [1.0.4] - 2026-10-23
 
 ### 新增
