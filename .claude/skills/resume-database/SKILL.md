@@ -1,7 +1,7 @@
 ---
 name: resume-database
-version: 1.0.3
-updated: 2026-10-22
+version: 1.0.4
+updated: 2026-10-23
 description: 大学生简历快速生成与面试准备工具。管理候选人CV、岗位JD、企业背调、面经库和经历素材,生成通用简历(按亮眼程度排序)或针对特定公司岗位的定向简历和面试准备文档,支持经历包装（先做再写）和投递记录追踪。适用于需要快速生成简历、海投策略、为每个岗位定制简历的求职场景。触发条件：用户要求生成简历(通用或定向)、为特定岗位定制简历、管理多个候选人求职材料、生成岗位定向面试准备、记录投递进度、从零散材料整理结构化CV、参考他人经历包装实习/项目经历。不触发：简历投递/岗位爬取/ATS对接、在线服务/图形界面、修改教育经历真实性。主要生成DOCX,如需PDF可用其他工具转换。
 ---
 
@@ -65,7 +65,8 @@ description: 大学生简历快速生成与面试准备工具。管理候选人C
 │   └── tracker-usage.md       # 投递追踪工具
 └── scripts/                   # 工具脚本
     ├── generate_resume.py     # 简历DOCX生成
-    └── tracker.py            # 投递追踪CLI
+    ├── tracker.py            # 投递追踪CLI
+    └── check_update.py       # 版本更新检测（由上面两个脚本在结束时调用）
 ```
 
 ## Data目录结构
@@ -289,3 +290,4 @@ data/                          # 数据目录（在工作目录下，不在skill
 **工具脚本：**
 - `scripts/generate_resume.py` - 简历Markdown转DOCX，依赖python-docx
 - `scripts/tracker.py` - 投递记录表CLI工具（init/add/update/query/list），依赖openpyxl
+- `scripts/check_update.py` - 检测 GitHub 上是否有新版本，仅用标准库。上面两个脚本结束时会自动调用：查不到就不提示；有新版本时在 stderr 输出更新命令，需要把提示转告用户，由用户决定是否更新。设置环境变量 `RESUME_DATABASE_NO_UPDATE_CHECK=1` 可关闭

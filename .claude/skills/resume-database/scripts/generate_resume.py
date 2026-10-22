@@ -540,4 +540,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    code = main()
+    if code == 0:
+        try:
+            sys.path.insert(0, str(Path(__file__).resolve().parent))
+            from check_update import notify_if_update
+            notify_if_update()
+        except Exception:
+            pass
+    raise SystemExit(code)

@@ -2,6 +2,12 @@
 
 本文件记录 resume-database skill 的版本变更。版本号与 `SKILL.md` 中的 `version` 保持一致，GitHub Release 的更新说明从这里读取。
 
+## [1.0.4] - 2026-10-23
+
+### 新增
+- 版本更新检测：`generate_resume.py` 和 `tracker.py` 运行结束时自动检查是否有新版本，有则提示更新命令；查询失败（断网、超时、仓库不可访问等）时不提示，不影响脚本正常运行
+- 可设置环境变量 `RESUME_DATABASE_NO_UPDATE_CHECK=1` 关闭检测
+
 ## [1.0.3] - 2026-10-22
 
 ### 变更
