@@ -1,1 +1,14 @@
-.topbar{padding:0 14px}.nav{gap:12px;font-size:13px}.nav .gh{display:none}.split{flex-direction:column}.arrow{transform:rotate(90deg);align-self:center}.pain .stage{height:420px}.doc{font-size:11px}.scene{min-height:90vh}
+.topbar{padding:0 14px}.nav{gap:12px;font-size:13px}.nav .gh{display:none}.split{flex-direction:column}.arrow{transform:rotate(90deg);align-self:center}.doc{font-size:11px}.scene{min-height:90vh}
+/* 首屏收件箱：压缩留白和行高，旁白留在首屏内 */
+.scene.pain{min-height:calc(100svh - 90px);justify-content:flex-start;gap:16px;padding:16px 12px 24px}
+.pain .win-bar{padding:8px 12px}
+.ib-head{padding:8px 12px;font-size:14px}
+.ib-count{font-size:11px;padding:1px 8px}
+.ib-list{max-height:none}
+.mail{gap:8px;padding:8px 12px}
+.mail:nth-child(n+7){display:none}
+.ib-dot{margin-top:6px;width:6px;height:6px}
+.ib-top{font-size:13px}.ib-time{font-size:11px}
+.ib-sub{font-size:12px;gap:6px}
+.ib-tag{font-size:10px;padding:0 5px}
+.pain>.narr{font-size:16px;line-height:1.5}
