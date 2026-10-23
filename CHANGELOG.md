@@ -2,6 +2,12 @@
 
 本文件记录 resume-database skill 的版本变更。版本号与 `SKILL.md` 中的 `version` 保持一致，GitHub Release 的更新说明从这里读取。
 
+## [1.0.7] - 2026-10-23
+
+### 新增
+- `assets/qrcode.png`：交流群二维码
+- `references/qa.md`：skill出现无法解决的错误或未知错误时，引导agent先帮用户梳理Bug现象、复现步骤和可能的解决方案，再通过二维码联系开发者
+
 ## [1.0.6] - 2026-10-23
 
 ### 变更

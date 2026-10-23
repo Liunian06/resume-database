@@ -1,6 +1,6 @@
 ---
 name: resume-database
-version: 1.0.6
+version: 1.0.7
 updated: 2026-10-23
 description: 大学生简历快速生成与面试准备工具。管理候选人CV、岗位JD、企业背调、面经库和经历素材,生成通用简历(按亮眼程度排序)或针对特定公司岗位的定向简历和面试准备文档,支持经历包装（先做再写）和投递记录追踪。适用于需要快速生成简历、海投策略、为每个岗位定制简历的求职场景。触发条件：用户要求生成简历(通用或定向)、为特定岗位定制简历、管理多个候选人求职材料、生成岗位定向面试准备、记录投递进度、从零散材料整理结构化CV、参考他人经历包装实习/项目经历。不触发：简历投递/岗位爬取/ATS对接、在线服务/图形界面、修改教育经历真实性。主要生成DOCX,如需PDF可用其他工具转换。
 ---
@@ -281,10 +281,14 @@ data/                          # 数据目录（在工作目录下，不在skill
 - [docx-generation.md](references/docx-generation.md) - 步骤8：Markdown转DOCX规则
 - [tracker-usage.md](references/tracker-usage.md) - 步骤9：投递记录表使用说明
 
+**问题反馈：**
+- [qa.md](references/qa.md) - 出现无法解决的错误或未知错误时，通过交流群二维码联系开发者
+
 **静态资源：**
 - `assets/templates/` - Markdown模板（用户索引、CV中英文、JD、企业背调、岗位画像、面试记录、面经库、简历输出、投递记录表）
 - `assets/examples/` - 非填空式参考示例（如bullet改写示例）
 - `assets/fonts/` - MiSans字体文件（免费商用）
+- `assets/qrcode.png` - 交流群二维码，用于联系开发者
 
 **工具脚本：**
 - `scripts/generate_resume.py` - 简历Markdown转DOCX，依赖python-docx
