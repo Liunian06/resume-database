@@ -22,11 +22,19 @@ window.SITE_CONTENT = {
     copiedLabel: "已复制",
   },
   pain: {
-    files: ["字节简历_v3.docx", "腾讯简历_final.docx", "美团简历_修改版.docx", "阿里简历_final_final.docx", "百度简历_新.docx"],
-    tabs: ["网申表单", "在线测评", "面试通知（邮箱）", "笔试链接"],
-    words: ["改不完", "来不及", "手忙脚乱"],
+    inboxTitle: "收件箱",
+    unread: "128封未读",
+    mails: [
+      { from: "字节跳动校园招聘", subject: "【在线测评】请于48小时内完成职业性格测评", tag: "测评", kind: "warn", time: "09:12" },
+      { from: "腾讯招聘", subject: "AI面试邀请：产品经理（2027届校招）", tag: "AI面试", kind: "warn", time: "08:47" },
+      { from: "美团招聘", subject: "【一面通知】数据分析实习生 · 明天14:00视频面试", tag: "一面", kind: "warn", time: "昨天" },
+      { from: "阿里巴巴集团", subject: "感谢您投递阿里巴巴，我们已收到您的简历", tag: "已投递", kind: "info", time: "昨天" },
+      { from: "百度校园招聘", subject: "感谢参与百度2027届校园招聘", tag: "校招", kind: "info", time: "周二" },
+      { from: "京东招聘", subject: "很遗憾，您的背景与该岗位暂不匹配", tag: "暂不匹配", kind: "bad", time: "周二" },
+      { from: "小红书招聘", subject: "【笔试提醒】请于今晚20:00前完成在线笔试", tag: "笔试", kind: "warn", time: "周一" },
+      { from: "网易招聘", subject: "感谢投递，您的简历暂不匹配当前岗位要求", tag: "暂不匹配", kind: "bad", time: "周一" },
+    ],
     narration: "改不完的简历，数不完的网申、测评、面试通知……每天都在和时间赛跑。",
-    calendar: ["9月", "10月", "11月"],
   },
   agent: {
     appName: "AI 助手",

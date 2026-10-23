@@ -40,31 +40,34 @@
   }
 
   /* ---------- 首页各幕 ---------- */
-  function scenePain(opts) {
+  function scenePain() {
     var p = C.pain, s = el("section", "scene pain");
     s.dataset.scene = "pain";
-    var stage = el("div", "stage");
-    p.files.forEach(function (f, i) {
-      var d = docIcon(f, "float f" + (i % 5));
-      d.style.setProperty("--i", i);
-      stage.appendChild(d);
+    var w = window_(p.inboxTitle);
+    w.classList.add("inbox");
+    var head = el("div", "ib-head");
+    head.appendChild(el("b", null, p.inboxTitle));
+    head.appendChild(el("span", "ib-count", p.unread));
+    w.appendChild(head);
+    var list = el("ul", "ib-list");
+    p.mails.forEach(function (m, i) {
+      var li = el("li", "mail");
+      li.style.setProperty("--i", i);
+      li.appendChild(el("i", "ib-dot"));
+      var main = el("div", "ib-main");
+      var top = el("div", "ib-top");
+      top.appendChild(el("span", "ib-from", m.from));
+      top.appendChild(el("span", "ib-time", m.time));
+      main.appendChild(top);
+      var sub = el("div", "ib-sub");
+      sub.appendChild(el("span", "ib-tag " + m.kind, m.tag));
+      sub.appendChild(el("span", "ib-subj", m.subject));
+      main.appendChild(sub);
+      li.appendChild(main);
+      list.appendChild(li);
     });
-    p.tabs.forEach(function (t, i) {
-      var tb = el("div", "tab t" + i, t);
-      tb.style.setProperty("--i", i);
-      stage.appendChild(tb);
-    });
-    var cal = el("div", "cal");
-    p.calendar.forEach(function (m) { cal.appendChild(el("span", null, m)); });
-    stage.appendChild(cal);
-    var words = el("div", "words");
-    p.words.forEach(function (w, i) {
-      var e = el("span", "word", w);
-      e.style.setProperty("--i", i);
-      words.appendChild(e);
-    });
-    stage.appendChild(words);
-    s.appendChild(stage);
+    w.appendChild(list);
+    s.appendChild(w);
     s.appendChild(el("p", "narr", p.narration));
     return s;
   }

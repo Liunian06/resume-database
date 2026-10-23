@@ -54,4 +54,4 @@ pre.code .copy{position:absolute;right:8px;top:8px}
 .g-steps li::before{content:counter(s);background:var(--grn);color:#052e1b;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;flex:none}
 .g-steps b{min-width:5em}.g-steps span{color:var(--mut)}
 .log-item{border:1px solid var(--bd);border-radius:12px;padding:4px 20px}.qr{border-radius:10px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.scene>*,.g-sec,.log-item,.tree li,.ln{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.scene>*,.g-sec,.log-item,.tree li,.ln,.mail{opacity:1!important;transform:none!important}}
