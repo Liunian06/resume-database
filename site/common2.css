@@ -8,6 +8,7 @@
 .msg{padding:10px 14px;border-radius:12px;font-size:15px;max-width:88%}
 .msg.user{align-self:flex-end;background:var(--ink);color:#f8fafc;min-height:42px}
 .msg.user .typed::after{content:"|";animation:blink 1s steps(2) infinite}
+.msg.user.sent .typed::after{content:none}
 .msg.ai{background:#ecfdf5;color:#065f46;align-self:flex-start}
 .dot{display:inline-block;width:6px;height:6px;margin-left:4px;border-radius:50%;background:var(--grn2);animation:dots 1.2s infinite}
 .dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}

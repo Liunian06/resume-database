@@ -287,6 +287,7 @@
     function step() {
       target.textContent = text.slice(0, ++i);
       if (i < text.length) timers.push(setTimeout(step, 70));
+      else node.classList.add("sent");
     }
     step();
   }
