@@ -40,6 +40,18 @@ window.SITE_CONTENT = {
     appName: "AI 助手",
     prompt: "帮我生成字节跳动产品岗位的简历",
     thinking: "正在处理",
+    newChat: "新对话",
+    recents: ["字节跳动产品岗简历", "腾讯数据分析面试准备", "美团投递记录整理", "整理我的 CV"],
+    model: "Claude",
+    skill: "resume-database",
+    tools: [
+      { verb: "读取", target: "jd.md" },
+      { verb: "搜索", target: "字节跳动 产品 业务线" },
+      { verb: "写入", target: "company_background.md" },
+      { verb: "写入", target: "job_profile.md" },
+    ],
+    reply: "已完成岗位分析，目录结构如下：",
+    placeholder: "回复…",
     tree: [
       { name: "data/10001/jobs/字节跳动-产品/", dir: true },
       { name: "jd.md" },

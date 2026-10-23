@@ -54,4 +54,31 @@ pre.code .copy{position:absolute;right:8px;top:8px}
 .g-steps li::before{content:counter(s);background:var(--grn);color:#052e1b;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;flex:none}
 .g-steps b{min-width:5em}.g-steps span{color:var(--mut)}
 .log-item{border:1px solid var(--bd);border-radius:12px;padding:4px 20px}.qr{border-radius:10px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.scene>*,.g-sec,.log-item,.tree li,.ln,.mail{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.scene>*,.g-sec,.log-item,.tree li,.ln,.mail,.cd-tool,.cd-reply{opacity:1!important;transform:none!important}}
+/* Claude Desktop 风格 */
+.win.cd{width:min(980px,100%);background:#faf9f5;border-color:#e8e4d8;text-align:left}
+.cd .win-bar{background:#f0eee6;border-color:#e8e4d8}
+.cd-wrap{display:flex;min-height:440px}
+.cd-side{flex:none;width:200px;background:#f0eee6;border-right:1px solid #e8e4d8;padding:14px 10px;font-size:13px;color:#3d3929}
+.cd-new{background:#c96442;color:#fff;border-radius:8px;padding:7px 10px;margin-bottom:14px;font-weight:600}
+.cd-rec{padding:6px 10px;border-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#6b6656}
+.cd-rec.on{background:#e3dfd2;color:#3d3929;font-weight:600}
+.cd-main{flex:1;min-width:0;background:#faf9f5;font-family:Georgia,"Songti SC",MiSans,serif}
+.cd .msg.user{background:#e8e4d8;color:#3d3929;border-radius:14px}
+.cd-think{display:flex;align-items:center;gap:6px;color:#c96442;font-size:14px}
+.cd-spark{display:inline-block;font-size:18px;animation:spin 3s linear infinite}
+.cd-tool{display:flex;align-items:center;gap:8px;font-size:13px;color:#3d3929;background:#fff;border:1px solid #e8e4d8;border-radius:8px;padding:6px 10px;opacity:0;transform:translateY(6px);transition:.4s calc(1.6s + var(--i)*.35s)}
+.cd-tool code{font:12px Consolas,monospace;color:#6b6656}
+.cd-ok{color:#5a8a3a;font-weight:700}
+.cd-reply{margin:0;font-size:14px;color:#3d3929;opacity:0;transition:.4s 3.2s}
+.agent.active .cd-tool,.agent.active .cd-reply{opacity:1;transform:none}
+.cd .tree{background:#fff;color:#3d3929;border:1px solid #e8e4d8}
+.cd .tree li{transition-delay:calc(3.4s + var(--i)*.3s)}
+.cd-input{margin-top:auto;background:#fff;border:1px solid #d9d4c5;border-radius:14px;padding:10px 12px;box-shadow:0 2px 8px rgba(61,57,41,.06)}
+.cd-ph{color:#a39e8c;font-size:14px}
+.cd-ibar{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:12px;color:#6b6656}
+.cd-chip{background:#f0eee6;border-radius:6px;padding:2px 8px}
+.cd-model{margin-left:auto}
+.cd-send{background:#c96442;color:#fff;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-weight:700}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:720px){.cd-side{display:none}}
