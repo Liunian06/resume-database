@@ -12,6 +12,7 @@ a{color:inherit;text-decoration:none}
 .nav a.on{font-weight:600}
 .scene{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:64px 20px;position:relative;overflow:hidden}
 .narr{font-size:clamp(18px,2.2vw,26px);font-weight:600;text-align:center;max-width:780px;margin:0}
+.pain>.narr{max-width:860px}
 .narr .sub{color:var(--mut);font-size:.8em;font-weight:400}
 .scene>*{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .scene.active>*{opacity:1;transform:none}
