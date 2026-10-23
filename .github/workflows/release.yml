@@ -11,6 +11,15 @@ permissions:
   contents: write
 
 jobs:
+  # 发版（含 workflow_dispatch 补发）成功后刷新官网，使网站跟随新版本
+  site:
+    needs: release
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml
+
   release:
     runs-on: ubuntu-latest
     steps:

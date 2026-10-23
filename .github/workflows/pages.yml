@@ -1,0 +1,49 @@
+name: Deploy Site
+
+# 两个触发器：
+# 1. site/ 目录单独更新（push）
+# 2. 发版之后（由 release.yml 的 site 任务通过 workflow_call 调用，
+#    因为 GITHUB_TOKEN 创建的 release 不会触发其他 workflow 的 release 事件）
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/scripts/inject_site.py'
+      - '.github/workflows/pages.yml'
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: 准备站点（排除开发文档并注入版本与更新日志）
+        run: |
+          mkdir _site
+          cp -r site/. _site/
+          rm -f _site/PLAN.md
+          python3 .github/scripts/inject_site.py _site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

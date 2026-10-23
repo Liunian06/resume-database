@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>resume-database</title>
+<style>
+  html, body { margin: 0; background: #05070d; color: #e8eefc; }
+  #app { min-height: 100vh; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<noscript>请启用 JavaScript 以查看本页。</noscript>
+<script src="content.js"></script>
+<script>
+(function () {
+  var mq = window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 900px)");
+  var current = null;
+  var loaded = [];
+
+  function load(mode) {
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = mode + "/" + mode + ".css";
+    css.dataset.mode = mode;
+    document.head.appendChild(css);
+    var js = document.createElement("script");
+    js.src = mode + "/" + mode + ".js";
+    js.dataset.mode = mode;
+    document.body.appendChild(js);
+    loaded = [css, js];
+  }
+
+  function unload() {
+    if (window.__site && typeof window.__site.destroy === "function") window.__site.destroy();
+    window.__site = null;
+    loaded.forEach(function (n) { n.remove(); });
+    loaded = [];
+    document.getElementById("app").innerHTML = "";
+  }
+
+  function apply() {
+    var mode = mq.matches ? "desktop" : "mobile";
+    if (mode === current) return;
+    if (current) unload();
+    current = mode;
+    document.documentElement.dataset.mode = mode;
+    document.title = window.SITE_CONTENT.meta.title;
+    load(mode);
+  }
+
+  if (mq.addEventListener) mq.addEventListener("change", apply);
+  else mq.addListener(apply);
+  apply();
+})();
+</script>
+</body>
+</html>

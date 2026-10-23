@@ -1,0 +1,51 @@
+:root {
+  --bg: #05070d;
+  --fg: #e8eefc;
+  --dim: #8a97b5;
+  --accent: #5ee1ff;
+  --accent2: #8b7bff;
+  --line: rgba(120, 160, 255, .18);
+  font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+.screen {
+  position: relative; min-height: 100vh; scroll-snap-align: start;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  padding: 0 8vw; box-sizing: border-box;
+}
+.screen-inner { max-width: 1000px; width: 100%; }
+.title {
+  margin: 0; font-size: clamp(44px, 6vw, 88px); line-height: 1.1; letter-spacing: -.02em;
+  background: linear-gradient(120deg, var(--fg) 30%, var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.subtitle { margin: 24px 0 40px; font-size: clamp(18px, 1.8vw, 26px); color: var(--dim); }
+.btn {
+  display: inline-block; padding: 12px 28px; border-radius: 999px; border: 1px solid var(--accent);
+  background: transparent; color: var(--accent); font: inherit; cursor: pointer; text-decoration: none;
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--accent); color: var(--bg); }
+.btn:focus-visible, .link:focus-visible { outline: 2px solid var(--accent2); outline-offset: 3px; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+.points, .steps, .cards, .states { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.point, .step, .card, .state {
+  padding: 18px 26px; border: 1px solid var(--line); border-radius: 14px;
+  background: rgba(20, 30, 60, .35); color: var(--fg);
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s calc(var(--i) * .12s), transform .6s calc(var(--i) * .12s);
+}
+.active .point, .active .step, .active .card, .active .state { opacity: 1; transform: none; }
+.cmd { display: inline-flex; gap: 16px; align-items: center; padding: 14px 20px; border: 1px solid var(--line); border-radius: 14px; background: rgba(20, 30, 60, .5); }
+.cmd code { font: 16px/1.4 ui-monospace, Consolas, monospace; color: var(--accent); }
+.link { display: block; margin-top: 20px; color: var(--dim); }
+.ver { color: var(--accent); font-size: 20px; margin: 0 0 20px; }
+.log { display: flex; gap: 32px; justify-content: center; text-align: left; margin-bottom: 28px; }
+.log-item h3 { margin: 0 0 8px; font-size: 16px; color: var(--fg); }
+.log-item li { color: var(--dim); }
+.qr { border-radius: 12px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .point, .step, .card, .state { opacity: 1; transform: none; transition: none; }
+}
