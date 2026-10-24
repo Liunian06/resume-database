@@ -2,6 +2,18 @@
 
 本文件记录 resume-database skill 的版本变更。版本号与 `SKILL.md` 中的 `version` 保持一致，GitHub Release 的更新说明从这里读取。
 
+## [1.1.0] - 2026-10-23
+
+### 变更
+- `SKILL.md` 不再写具体步骤，改为工作流路由，新增 `workflows/` 目录，原 9 步主流程移入 `workflows/resume-generation.md`
+- 经历包装从主流程中剥离为独立工作流 `workflows/experience-packaging.md`，产出改为写回 `cv_CN.md` 和 `cv_EN.md`，后续所有简历复用；主流程生成简历时发现经历 gap 只提示可选包装
+- `resume-writing.md` 删除重复的包装段落；`experience-rewriting.md` 去掉触发条件和写死的步骤编号，只保留包装规则
+
+### 新增
+- 简历打分工作流 `workflows/resume-scoring.md`：只给定向简历打分，只看与 JD 的匹配度，默认只打分不改，用户要求时才自动修改
+- `references/resume-scoring.md`：评分维度（硬性要求、职责、技能关键词、经历相关度、成果证据）和 score 文档规则
+- `assets/templates/resume_score_template.md`：打分文档模板
+
 ## [1.0.7] - 2026-10-23
 
 ### 新增

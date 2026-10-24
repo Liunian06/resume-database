@@ -14,6 +14,11 @@
 - 公司与岗位用下划线连接
 - 示例：`10001_bytedance_product_resume.md`
 
+## 打分文档命名
+- 格式：`<basename>_score.md`
+- 示例：`10001_bytedance_product_resume_score.md`
+- 位置：与`<basename>.md`同一岗位目录，规则见[resume-scoring.md](resume-scoring.md)
+
 ## CV文件命名
 - 按语言分文件：`cv_CN.md`（中文）、`cv_EN.md`（英文）
 - 同一候选人的中英文事实需保持一致，不得互相矛盾

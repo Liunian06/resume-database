@@ -64,4 +64,4 @@ Markdown不符合模板时，脚本输出`ERROR: Markdown 格式错误：第N行
 
 ## 调用时机
 
-步骤8"生成DOCX"时调用：确认`<basename>.md`已生成 → 调用脚本 → 检查`<basename>.docx`是否生成。失败时按报错行号回改Markdown。
+简历生成工作流的"生成DOCX"步骤调用：确认`<basename>.md`已生成 → 调用脚本 → 检查`<basename>.docx`是否生成。失败时按报错行号回改Markdown。

@@ -18,27 +18,18 @@
 4. 把真实尝试写成自己的经历
 5. **不直接背诵、移植他人描述**
 
-## 触发条件
+## 包装规则
 
-### 何时需要包装
-- CV中的实习/项目经历与JD要求有明显gap
-- 候选人主动要求参考他人经历
-- 岗位画像显示需要某类经历，但CV中缺失
+工作流顺序见[经历包装工作流](../workflows/experience-packaging.md)，以下是各环节的具体规则。
 
-### 何时不需要包装
-- CV中已有足够匹配的经历
-- 只需调整表述，不需新增经历
-
-## 包装流程
-
-### 步骤1：读取参考素材
+### 读取参考素材
 - 从`data/experience_library/<project_name>.md`读取相关素材
-- 选择与JD要求最匹配的素材
+- 选择与待补经历方向最匹配的素材
 - 理解素材中的思路、做法、工具和产出
 
 **素材示例参考**[assets/examples/experience_rewriting_examples.md](../assets/examples/experience_rewriting_examples.md)
 
-### 步骤2：引导候选人真实尝试
+### 引导候选人真实尝试
 **明确告知候选人：**
 ```
 这个经历参考自他人，但不能直接复制。你需要先按照这个思路实际操作一遍：
@@ -58,19 +49,19 @@
 
 **引导示例参考**[assets/examples/experience_rewriting_examples.md](../assets/examples/experience_rewriting_examples.md)
 
-### 步骤3：等待候选人完成
+### 完成情况处理
 - 候选人实际完成操作并提供产出
-- 如候选人未完成，**不写入简历**
+- 如候选人未完成，**不写入CV**
 - 如候选人完成部分，写入完成的部分
 
-### 步骤4：将真实尝试写成经历
+### 将真实尝试写成经历
 - 基于候选人的真实尝试和产出
 - **使用STAR格式**改写成简历经历
   - **S (Situation)** - 项目背景和数据集来源
   - **T (Task)** - 要解决的分析任务
   - **A (Action)** - 使用的工具和分析方法
   - **R (Result)** - 得到的发现和输出的报告
-- 融入JD关键词
+- 写入`cv_CN.md`和`cv_EN.md`，字段格式与中英文一致性遵循[cv-extraction.md](cv-extraction.md)
 - **不复制参考素材的原文**
 
 **改写示例参考**[assets/examples/experience_rewriting_examples.md](../assets/examples/experience_rewriting_examples.md)
@@ -92,4 +83,5 @@
 - [ ] 候选人已实际完成操作并提供产出
 - [ ] 经历描述基于候选人的真实尝试，非参考素材原文
 - [ ] 经历使用STAR格式改写
-- [ ] 如候选人未完成，未写入简历
+- [ ] 中英文CV均已更新且事实一致
+- [ ] 如候选人未完成，未写入CV

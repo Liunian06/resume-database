@@ -112,18 +112,9 @@ CV中有本科、硕士、博士等多段学历时，全部写入教育经历，
 - GPA/排名：如成绩优秀，突出显示；如成绩一般，可省略
 - 荣誉：选择与岗位相关的荣誉
 
-## 实习和项目经历包装
+## 经历不足时
 
-### 触发条件
-- CV中的实习/项目经历与JD要求有gap
-- 需要参考他人经历"包装"
-
-### 包装流程
-参考[experience-rewriting.md](experience-rewriting.md)：
-1. 读取`data/experience_library/<project_name>.md`
-2. 引导候选人先按参考经历完成真实尝试
-3. 将真实尝试写成自己的经历
-4. **不直接移植他人描述**
+只使用CV中已有的经历。经历与岗位仍有明显gap时，由[经历包装工作流](../workflows/experience-packaging.md)补充并写回CV，本文件不处理包装。
 
 ## 输出文件
 
